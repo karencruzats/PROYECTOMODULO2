@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Enviar Dinero</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<style>
+        body { background-color: #c8ebf1; padding-top: 50px;font-family: 'Courier New', Courier, monospace; }
+        h2 {font-weight: bolder; font-size: xx-large;}
+        
+       
+            </style></head>
+<body>
+
+    <div class="container mt-4">
+        <h2 class="mb-4 text-center">Enviar Dinero</h2>
+        
+        <div class="form-group">
+            <label for="searchContact">Buscar contacto:</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchContact" placeholder="Ingrese Nombre del Destinatario">
+                <div class="input-group-append">
+                    <button class="btn btn-info" type="button" id="btnSearch">Buscar</button>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-success btn-lg btn-block mb-2" data-toggle="modal" data-target="#addContactModal">
+            + Agregar nuevo contacto
+        </button>
+
+
+
+
+        <h2 class="mb-4 text text-center">Contactos</h2>
+        <ul id="contactList" class="list-group mb-4">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="contact-info">
+                    <strong>Lana del Rey</strong><br>
+                    <small class="text-muted">RUT: 17.777.777-1 | Banco Itaú</small>
+                </div>
+        <button type="button" class="btn btn-sm btn-outline-info btn-lg " data-toggle="modal" data-target="#addEnviarDinero">
+            Seleccionar
+        </button>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="contact-info">
+                    <strong>Brad Pitt</strong><br>
+                    <small class="text-muted">RUT: 8.444.444-k | Banco de Chile</small>
+                </div>
+        <button type="button" class="btn btn-sm btn-outline-info btn-lg " data-toggle="modal" data-target="#addEnviarDinero">
+            Seleccionar
+        </button>
+            </li>
+ <li class="list-group-item d-flex justify-content-between align-items-center">
+                <div class="contact-info">
+                    <strong>Fred Durst</strong><br>
+                    <small class="text-muted">RUT: 8.444.444-k | Banco de Chile</small>
+                </div>
+        <button type="button" class="btn btn-sm btn-outline-info btn-lg " data-toggle="modal" data-target="#addEnviarDinero">
+            Seleccionar
+        </button>
+            </li>
+        </ul>
+
+        <a href="menu.html" class="btn btn-dark btn-lg btn-block mb-2">Volver al Menú Principal</a>
+    </div>
+
+    <div class="modal fade" id="addEnviarDinero" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="titulo" id="modalLabel">Enviar Dinero a mis Contacto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+               </button>
+          </div>
+
+
+    <div id="alertMensaje" class="alert" style="display: none;"></div>
+    <div class="card p-4">
+    <form id="depositForm">
+    <div class="form-group">
+    <label for="inputDeposito" > ¿Cuánto dinero quieres enviar?</label>
+    <br>
+    <input type="number" class="form-control" id="inputDeposito" placeholder="Ingresa el Monto" min="1" required="">
+    <br>
+    </div>
+    <button type="submit" class="btn btn-success btn-lg btn-block mb-2">Enviar Dinero</button>
+    </form>
+    </div>
+    <a href="menu.html" class="btn btn-dark btn-lg">Volver al Menú Principal</a>
+    </div>
+
+
+          </div></form></div></div></div></div>
+
+    <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="titulo" id="modalLabel">Nuevo Contacto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true"></span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="addContactForm">
+                <div class="form-group">
+                    <label>Datos del Destinatario</label>
+                    <input type="text" class="form-control" id="newContactName" placeholder="Nombre y Apellido" required="">
+                </div>
+                 <div class="form-group">
+                    <label>Alias</label>
+                    <input type="text" class="form-control" id="newContactNumber" placeholder="" required="">
+                </div>
+                <div class="form-group">
+                    <label>RUT</label>
+                    <input type="text" class="form-control" id="newContactRUT" placeholder="Ejemplo: 12.345.678-9" required="">
+                </div>
+                <div class="form-group">
+                    <label>Banco</label>
+                    <select class="form-control" id="newContactBank">
+                        <option>Banco Estado</option>
+                        <option>Banco de Chile</option>
+                        <option>Santander</option>
+                        <option>BCI</option>
+                        <option>Scotiabank</option>
+                        <option>Itaú</option>
+                        <option>Falabella</option>
+                        <option>Banco Ripley</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Tipo de Cuenta</label>
+                    <select class="form-control" id="newContactType">
+                        <option>Cuenta Rut / Vista</option>
+                        <option>Cuenta Corriente</option>
+                        <option>Cuenta de Ahorro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Número de Cuenta</label>
+                    <input type="number" class="form-control" id="newContactNumber" placeholder="" required="">
+                </div>
+               
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-lg mb-1" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary btn-lg mb-1" id="saveContactBtn">Guardar Contacto</button>
+          </div>
+        </div>
+  
+            </form>
+          </div></div></div></div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <script>
+             $(document).ready(function() {
+            var saldoActual = localStorage.getItem('walletSaldo');
+            if(saldoActual === null) {
+                saldoActual = 0;
+            } else {
+                saldoActual = parseInt(saldoActual); 
+            }
+
+      $('#depositForm').submit(function(evento) {
+                evento.preventDefault();
+                var montoIngresado = $('#inputDeposito').val();
+                var montoNumero = parseInt(montoIngresado);
+
+                if(montoNumero > 0) {
+                    // 1. restar  Saldo
+                    var nuevoSaldo = saldoActual - montoNumero;
+                    localStorage.setItem('walletSaldo', nuevoSaldo);
+                    
+                    // 2. Guardar en Historial
+                    var historial = JSON.parse(localStorage.getItem('walletHistorial')) || [];
+                    
+                    var movimiento = {
+                        tipo: 'Transferencia',
+                        descripcion: 'Envío de Dinero',
+                        monto: montoNumero,
+                        fecha: new Date().toLocaleDateString(),
+                        esIngreso: false 
+                    };
+
+                    historial.unshift(movimiento);
+                    localStorage.setItem('walletHistorial', JSON.stringify(historial));
+
+                    // 3. Feedback
+                    $('#alertMensaje').removeClass('alert-danger').addClass('alert-success');
+                    $('#alertMensaje').text('¡Envío de dinero exitoso! Nuevo saldo: $' + nuevoSaldo);
+                    $('#alertMensaje').slideDown();
+                    $('#inputDeposito').val('');
+                    
+                    saldoActual = nuevoSaldo;
+
+                } else {
+                    $('#alertMensaje').removeClass('alert-success').addClass('alert-danger');
+                    $('#alertMensaje').text('El monto debe ser mayor a 0');
+                    $('#alertMensaje').slideDown();
+                }
+            });
+        });
+            
+    </script>
+
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alke Wallet</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+<style>
+body {font-family: 'Courier New', Courier, monospace; margin-top: 10cqmin; background-color: #c8ebf1; text-align: center;}
+.parrafo {font-size: 7cqmin ;font-family:'Courier New', Courier, monospace;}
+.titulo{font-weight: bolder ; font-size:20cqmin; font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+#miFormulario {font-family: 'Courier New', Courier, monospace; background-color:rgb(91, 95, 107)}
+</style>
+</head>
+<body>
+    <div class="inicioDePagina"id=inicio>
+        <h1 class="titulo">Alke Wallet</h1>
+        <p class="parrafo">Tu billetera digital</p>
+    </div>
+    <div>
+        <button type="submit"id ="btnIngreso" class="btn btn-info btn-lg btn-block mb-2" > Iniciar Sesión </button>
+    </div>
+<br>
+     <form id="miFormulario">
+    <input type="text" id="Formulario" placeholder="Indícanos tus datos">
+    <button type="submit" class="btn btn-info btn-lg btn-lg">Enviar</button>
+  </form>
+<br>
+
+<button id="miBoton" class="btn btn-info btn-lg mb-4">Visita nuestras redes</button>
+
+
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <script>
+
+$("#miFormulario").submit(function(event) {
+                event.preventDefault(); 
+                alert("Gracias por tu interés, Te contactaremos a la brevedad!🚀");
+            })
+
+ $( '#btnIngreso' ).click (function (evento) {
+                evento .preventDefault()
+                window.location.href="login.html" 
+            });
+
+ $("#miBoton").click(function() {
+                window.location.href = "https://www.instagram.com"; 
+            });
+  </script>
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
